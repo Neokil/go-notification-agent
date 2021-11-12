@@ -24,11 +24,11 @@ type NotificationUrgency uint8
 
 func (n NotificationUrgency) String() string {
 	switch n {
-	case 0:
+	case Low:
 		return "Low"
-	case 1:
+	case Normal:
 		return "Normal"
-	case 2:
+	case High:
 		return "High"
 	default:
 		return fmt.Sprintf("Invalid NotificationUrgency: %d", n)
