@@ -99,7 +99,7 @@ func handleConnection(c net.Conn) {
 	case "pop":
 		notificationsMutex.Lock()
 		if len(notifications) > 0 {
-			notifications = notifications[0 : len(notifications)-1]
+			notifications = notifications[1:]
 		}
 		notificationsMutex.Unlock()
 		_, _ = c.Write([]byte("Ok"))
